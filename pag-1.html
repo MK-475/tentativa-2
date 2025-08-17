@@ -59,6 +59,22 @@
       font-size: 16px;
     }
 
+    .quote {
+      margin-top: 15px;
+      font-size: 14px;
+      font-style: italic;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 13px;
+      color: #555;
+    }
+
     /* Ajustes para celular */
     @media (max-width: 480px) {
       .card {
@@ -69,6 +85,9 @@
       }
       .timer {
         font-size: 14px;
+      }
+      .quote {
+        font-size: 13px;
       }
     }
   </style>
@@ -90,10 +109,16 @@
       Mi amor por ti comenzó hace...  
       <span id="contador"></span>
     </div>
+
+    <!-- 🌹 Frase abaixo do cronômetro -->
+    <p class="quote">
+      “Às vezes, a alegria é a fonte do seu sorriso e, às vezes, o seu sorriso é a fonte da minha alegria”  
+      <span>— Thich Nhat Hanh</span>
+    </p>
   </div>
 
   <script>
-    // Contador de tiempo desde 20 de octubre de 2024
+    // Contador de tempo desde 20 de octubre de 2024
     const inicio = new Date("2024-10-20T00:00:00"); 
     function actualizarContador() {
       let ahora = new Date();

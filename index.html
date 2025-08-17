@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Love You ❤</title>
-    <link rel="stylesheet" href="pag-1.html" />
     <style>
         body {
             display: flex;
@@ -27,40 +26,48 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             text-align: center;
         }
 
         .buttons-container {
             display: flex;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 250px;
+            justify-content: center;
             gap: 15px;
         }
 
+        /* Estilo geral dos botões */
         .btn {
-            flex: 1;
-            min-width: 70px;
-            height: 45px;
             background: white;
             border: none;
             border-radius: 8px;
             color: blue;
             font-weight: 600;
+            font-size: 16px;  /* 👈 mesmo tamanho para ambos */
             cursor: pointer;
             transition: transform 0.2s ease;
             display: flex;
             justify-content: center;
             align-items: center;
-            text-decoration: none; /* remove sublinhado do link */
+            text-decoration: none;
         }
 
-        .btn:hover {
+        /* SIM fixo */
+        .btn-sim {
+            width: 90px;
+            height: 45px;
+        }
+
+        /* NÃO flexível para fugir */
+        .btn-nao {
+            min-width: 90px; /* 👈 mesma largura mínima para não achatar a fonte */
+            height: 45px;
+        }
+
+        .btn-nao:hover {
             transform: scale(1.05);
         }
 
-        /* Ajustes para telas menores */
         @media (max-width: 480px) {
             .box {
                 font-size: 16px;
@@ -68,19 +75,27 @@
             }
 
             .btn {
+                font-size: 14px; /* 👈 ambos reduzem juntos */
+            }
+
+            .btn-sim {
+                width: 80px;
                 height: 40px;
-                font-size: 14px;
+            }
+
+            .btn-nao {
+                min-width: 80px;
+                height: 40px;
             }
         }
     </style>
 </head>
 <body>
     <div class="box">
-        <p>Aceita tentar de novo cmg?</p>
+        <p>Aceita ser a flor do meu jardim?</p>
         <div class="buttons-container">
-            <!-- Agora é link direto com classe de botão -->
-            <a href="pag-1.html" class="btn">Sim</a>
-            <button id="no" class="btn">Não</button>
+            <a hrSef="pag-1.html" class="btn btn-sim">Sim</a>
+            <button id="no" class="btn btn-nao">Não</button>
         </div>
     </div>
 
@@ -88,7 +103,7 @@
         const button = document.getElementById('no');
 
         button.addEventListener('mouseover', moverBotao);
-        button.addEventListener('touchstart', moverBotao); // 👈 no celular funciona com toque também
+        button.addEventListener('touchstart', moverBotao);
 
         function moverBotao() {
             const height = window.innerHeight - button.offsetHeight - 20;
