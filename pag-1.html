@@ -127,9 +127,10 @@
       let dias = Math.floor(diff / (1000 * 60 * 60 * 24));
       let horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
       let minutos = Math.floor((diff / (1000 * 60)) % 60);
+      let segundos = Math.floor((diff / 1000) % 60);
 
       document.getElementById("contador").textContent =
-        `${dias} días ${horas} horas ${minutos} minutos`;
+        `${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
     }
     setInterval(actualizarContador, 1000);
     actualizarContador();
