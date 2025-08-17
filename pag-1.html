@@ -118,22 +118,26 @@
   </div>
 
   <script>
-    // Contador de tempo desde 20 de octubre de 2024
-    const inicio = new Date("2024-10-20T00:00:00"); 
-    function actualizarContador() {
-      let ahora = new Date();
-      let diff = ahora - inicio;
+    document.addEventListener("DOMContentLoaded", () => {
+      // Contador de tempo desde 20 de octubre de 2024
+      const inicio = new Date("2024-10-20T00:00:00"); 
 
-      let dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-      let horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      let minutos = Math.floor((diff / (1000 * 60)) % 60);
-      let segundos = Math.floor((diff / 1000) % 60);
+      function actualizarContador() {
+        let ahora = new Date();
+        let diff = ahora - inicio;
 
-      document.getElementById("contador").textContent =
-        `${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
-    }
-    setInterval(actualizarContador, 1000);
-    actualizarContador();
+        let dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        let minutos = Math.floor((diff / (1000 * 60)) % 60);
+        let segundos = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("contador").textContent =
+          `${dias} días ${horas} horas ${minutos} minutos ${segundos} segundos`;
+      }
+
+      setInterval(actualizarContador, 1000);
+      actualizarContador();
+    });
   </script>
 </body>
 </html>
