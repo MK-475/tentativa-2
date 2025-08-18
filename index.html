@@ -1,119 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You ❤</title>
-    <link rel="stylesheet" href="pag-1.html" />
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #121212;
-            font-family: Arial, sans-serif;
-        }
-
-        .box {
-            font-size: 18px;
-            color: white;
-            padding: 20px;
-            max-width: 90%;
-            border-radius: 10px;
-            background: #191919;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-align: center;
-        }
-
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        /* Estilo geral dos botões */
-        .btn {
-            background: white;
-            border: none;
-            border-radius: 8px;
-            color: blue;
-            font-weight: 600;
-            font-size: 16px;  /* 👈 mesmo tamanho para ambos */
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        /* SIM fixo */
-        .btn-sim {
-            width: 90px;
-            height: 45px;
-        }
-
-        /* NÃO flexível para fugir */
-        .btn-nao {
-            min-width: 90px; /* 👈 mesma largura mínima para não achatar a fonte */
-            height: 45px;
-        }
-
-        .btn-nao:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 480px) {
-            .box {
-                font-size: 16px;
-                padding: 15px;
-            }
-
-            .btn {
-                font-size: 14px; /* 👈 ambos reduzem juntos */
-            }
-
-            .btn-sim {
-                width: 80px;
-                height: 40px;
-            }
-
-            .btn-nao {
-                min-width: 80px;
-                height: 40px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Love You ❤</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="box">
-        <p>Aceita ser a flor do meu jardim?</p>
-        <div class="buttons-container">
-            <a href="pag-1.html" class="btn btn-sim">Sim</a>
-            <button id="no" class="btn btn-nao">Não</button>
-        </div>
+  <div class="box">
+    <p>Aceita ser a flor do meu jardim?</p>
+    <div class="buttons-container">
+      <a href="pagina2.html" class="btn btn-sim">Sim</a>
+      <button id="no" class="btn btn-nao">Não</button>
     </div>
+  </div>
 
-    <script>
-        const button = document.getElementById('no');
-
-        button.addEventListener('mouseover', moverBotao);
-        button.addEventListener('touchstart', moverBotao);
-
-        function moverBotao() {
-            const height = window.innerHeight - button.offsetHeight - 20;
-            const width = window.innerWidth - button.offsetWidth - 20;
-
-            button.style.position = "absolute";
-            button.style.top = Math.random() * height + "px";
-            button.style.left = Math.random() * width + "px";
-        }
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
